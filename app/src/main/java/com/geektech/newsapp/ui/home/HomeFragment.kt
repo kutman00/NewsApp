@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.geektech.newsapp.App
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentHomeBinding
 import com.geektech.newsapp.models.News
@@ -62,7 +63,8 @@ class HomeFragment : Fragment() {
                 }
             } else {
                 adapter.addItem(news)
-                Log.e("Home", "text {$news.title} ${news.createdAt}")
+                binding.recyclerView.adapter = adapter
+
             }
             binding.recyclerView.adapter = adapter
             alert()
@@ -78,7 +80,8 @@ class HomeFragment : Fragment() {
             dialog.setPositiveButton("Yes") { _, _ ->
                 val news: News = adapter.getItem(it)
                 adapter.deleteItems(it)
-                binding.recyclerView.adapter = adapter
+                App.database.newsDao().deleteItem(news)
+                adapter
             }
                 dialog.setNegativeButton("Cancel"){dialog, _-> dialog.cancel()}
                 dialog.show()

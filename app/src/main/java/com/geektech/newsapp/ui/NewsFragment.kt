@@ -1,11 +1,13 @@
 package com.geektech.newsapp.ui
 
 import android.os.Bundle
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.geektech.newsapp.App
 import com.geektech.newsapp.databinding.FragmentNewsBinding
 import com.geektech.newsapp.models.News
 
@@ -18,7 +20,7 @@ class NewsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentNewsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -40,7 +42,8 @@ class NewsFragment : Fragment() {
         val text = binding.editText.text.toString().trim()
 
         if (news == null) {
-            news = News(text, System.currentTimeMillis())
+            news = News(0,text, System.currentTimeMillis())
+            App.database.newsDao().insert(news!!)
         } else {
             news?.title = text
         }

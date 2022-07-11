@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/grad1.xml" value="0.151" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.151" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/ic_profile.xml" value="0.151" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/image.xml" value="0.151" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/news1.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/news2.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp2/app/src/main/res/drawable/news3.xml" value="0.1" />

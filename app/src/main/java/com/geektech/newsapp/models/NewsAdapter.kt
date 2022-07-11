@@ -41,8 +41,11 @@ class NewsAdapter(private val onClick: (position: Int) -> Unit) :
     override fun getItemCount() = list.size
 
     fun addItem(news: News) {
-        list.add(0, news)
-        notifyItemInserted(0)
+        news.let {
+            list.add(0, news)
+            notifyItemInserted(list.indexOf(news))
+        }
+
     }
 
     fun getItem(pos: Int): News {
